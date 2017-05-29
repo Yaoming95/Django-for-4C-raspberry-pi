@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'news',
     'control',
+    'homepage',
+    'livevideo',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,5 +1,37 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>control panel</title>
+    <script type="text/javascript">
+        function loadXMLDoc()
+        {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+         {// code for IE7+, Firefox, Chrome, Opera, Safari
+         xmlhttp=new XMLHttpRequest();
+         }
+        else
+         {// code for IE6, IE5
+         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+        xmlhttp.onreadystatechange=function()
+         {
+         if (xmlhttp.readyState==4 && xmlhttp.status==200)
+          {
+          document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+          }
+         }
+        xmlhttp.open("GET","log.txt",true);
+        xmlhttp.send();
+        }
+    </script>
+    <script type="text/javascript">
+            setInterval(function(){
+                document.getElementById('btn').onclick();
+            },5000);
+    </script>
+</head>
+
 <body>
 <p>Please input your command:</p>
 
@@ -7,6 +39,17 @@
     a: <input type="text" name="a"> <br>
     <input type="submit" value="submit">
 </form>
+
+
+<form id="form1">
+<div id="myDiv"><h2>通过ajax改变内容</h2></div>
+<button id="btn" type="button" onclick="loadXMLDoc()">通过 AJAX 改变内容(获取test1.txt上面的文本)</button>
+</form>
+
+
+{#<div id="myDiv"><h2>Log Here</h2></div>#}
+{#<button type="button" id="myDiv" onclick="loadXMLDoc()">Refresh Log</button>#}
+
 <!-- start sw-rss-feed code -->
 <script type="text/javascript">
 <!--
