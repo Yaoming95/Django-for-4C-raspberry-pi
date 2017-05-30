@@ -15,5 +15,5 @@ urlpatterns = patterns('',
     url(r'^control', control_view.index, ),
     url(r'^add/$', control_view.add, name='add'),
     url(r'^$', hp_view.index),
-    url(r'^video/$', video_view.index),
+    url(r'^livevideo/templates/live.html/$', video_view.index),
 )

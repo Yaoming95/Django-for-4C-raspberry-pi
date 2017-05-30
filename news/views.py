@@ -6,10 +6,11 @@ import json
 import os
 import sys
 
+
 def index(request):
     filepath = settings.MEDIA_ROOT + 'log.txt'
     logs = list()
-    logs.append('12')
+    logs.append('logs:<br>')
     try:
         f = open(filepath, 'r')
         line = 0
