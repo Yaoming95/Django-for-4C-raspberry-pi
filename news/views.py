@@ -10,19 +10,24 @@ import sys
 def index(request):
     filepath = settings.MEDIA_ROOT + 'log.txt'
     logs = list()
-    logs.append('logs:<br>')
     try:
         f = open(filepath, 'r')
-        line = 0
         for lines in f.readlines():
-            line += 1
-            if line == 5:
-                break
             logs.append(lines+'<br>')
     finally:
         if f:
             f.close()
-    List = logs
+    logs.append('logs:<br>')
+    #logs.reverse()
+    line = 0
+    List = list()
+    length = len(logs)
+    for i in range(7):
+        if i == 0:
+            continue
+        if i > length:
+            break
+        List.append(logs[-i])
     return render(request, 'home.html', {
         'List': json.dumps(List),
     })
