@@ -5,11 +5,14 @@ import urllib2
 import json
 import os
 
+
 def index(request):
     return render(request, 'control.html')
 
+
 def add(request):
-    a = request.GET.get('a', None)
+    # a = request.GET.get('a', None)
+    a = request.POST.get('a', None)
     a = str(a)
     filrpath = settings.MEDIA_ROOT + 'command.txt'
     try:

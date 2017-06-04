@@ -13,11 +13,11 @@ def index(request):
     try:
         f = open(filepath, 'r')
         for lines in f.readlines():
-            logs.append(lines+'<br>')
+            logs.append('<p>'+lines+'</p>')
     finally:
         if f:
             f.close()
-    logs.append('logs:<br>')
+    #logs.append('logs:<br>')
     #logs.reverse()
     line = 0
     List = list()

@@ -1,95 +1,285 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-    <title>control panel</title>
-    <script type="text/javascript">
-        function loadXMLDoc()
-        {
-        var xmlhttp;
-        if (window.XMLHttpRequest)
-         {// code for IE7+, Firefox, Chrome, Opera, Safari
-         xmlhttp=new XMLHttpRequest();
-         }
-        else
-         {// code for IE6, IE5
-         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-         }
-        xmlhttp.onreadystatechange=function()
-         {
-         if (xmlhttp.readyState==4 && xmlhttp.status==200)
-          {
-          document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-          }
-         }
-        xmlhttp.open("GET","log.txt",true);
-        xmlhttp.send();
-        }
-    </script>
-    <script type="text/javascript">
-            setInterval(function(){
-                document.getElementById('btn').onclick();
-            },5000);
-    </script>
+<meta charset="utf-8">
+<!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D01-Control Panel</title>
+<meta name="description" content="D01-Control Panel">
+<meta name="keywords" content="">
+<meta name="author" content="Bao Weiming">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="../../static/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../../static/css/font-awesome.css">
+
+<!-- Slider
+================================================== -->
+<link href="../../static/css/owl.carousel.css" rel="stylesheet" media="screen">
+<link href="../../static/css/owl.theme.css" rel="stylesheet" media="screen">
+
+<!-- Stylesheet
+================================================== -->
+<link rel="stylesheet" type="text/css"  href="../../static/css/style.css">
+<link rel="stylesheet" type="text/css"  href="../../static/css/style2.css">
+<link rel="stylesheet" type="text/css" href="../../static/css/responsive.css">
+    
+<!-- Video
+================================================== -->
+<!--<link href="css/video-default.css" rel="stylesheet">-->
+
+<link rel="stylesheet" href="../../static/css/buttons.css">
+
+<!-- Code
+================================================== -->
+<!-- <link href="../../static/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../../static/google-code-prettify/prettify.js"></script>
+ -->
+
+<script type="text/javascript">
+function sub(){
+	var ch = "1";
+	var ch2 = "0";
+    command = document.getElementById("cmd");
+	check_val = [];
+    if(document.getElementById("cb1").checked){
+        check_val.push(ch);
+    }
+    else{
+    	check_val.push(ch2);
+    }
+    if(document.getElementById("cb2").checked){
+        check_val.push(ch);
+    }
+    else{
+    	check_val.push(ch2);
+    }
+    if(document.getElementById("cb3").checked){
+        check_val.push(ch);
+    }
+    else{
+    	check_val.push(ch2);
+    }
+    if(document.getElementById("cb4").checked){
+        check_val.push(ch);
+    }
+    else{
+    	check_val.push(ch2);
+    }
+    if(document.getElementById("cb5").checked){
+        check_val.push(ch);
+    }
+    else{
+    	check_val.push(ch2);
+    }
+    if(document.getElementById("cb6").checked){
+        check_val.push(ch);
+    }
+    else{
+    	check_val.push(ch2);
+    }
+    command.value = check_val[0] + check_val[1] + check_val[2] + check_val[3] + check_val[4] + check_val[5];
+    document.getElementById("add").submit(check_val)
+    return true;
+
+{#    alert(check_val.join("") + " submitted!");#}
+}
+</script>
+
 </head>
 
 <body>
-<p>Please input your command:</p>
 
-<form action="/add/" method="get">
-    a: <input type="text" name="a"> <br>
-    <input type="submit" value="submit">
-</form>
+<nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="$">Group 01</a>
+	</div>
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	  <ul class="nav navbar-nav navbar-right">
+		<li><a href="/control/" class="page-scroll">Control Panel</a></li>
+        <li><a href="/log/" class="page-scroll">Log</a></li>
+		<li><a href="/video/" class="page-scroll">Video Monitor</a></li>
+<!-- 		<li><a href="#tf-er" class="page-scroll">控制端实现</a></li>
+        <li><a href="#tf-works" class="page-scroll">成果与特色</a></li>
+		<li><a href="#tf-download" class="page-scroll">下载</a></li>
+        <li><a href="#tf-thoughts" class="page-scroll">组员体悟</a></li>
+		<li><a href="#tf-reference" class="page-scroll">参考文献</a></li> -->
+		<!-- <li><a href="#tf-thanks" class="page-scroll">致谢</a></li> -->
+	  </ul>
+	</div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<p></p>
+
+<div id="tf-ee">
+    <div class="container"> <!-- Container -->
+        <div class="section-title-black center">
+            <h1 style="text-color=#000000;text-align: center;"><strong>Control Panel</strong></h1>
+            <div class="line">
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: -60px; margin-bottom: 60px">
+	<section class="main">
+		<div class="row">
+			<div class="col-md-4">
+				<hr>
+				<h2 class="text-center">Title 1</h2>
+				<div class="switch demo3">
+					<input id="cb1" type="checkbox">
+					<label><i></i></label>
+				</div>
+				<hr>
+			</div>
+			<div class="col-md-4">
+				<hr>
+				<h2 class="text-center">Title 2</h2>
+				<div class="switch demo3">
+					<input id="cb2" type="checkbox">
+					<label><i></i></label>
+				</div>
+				<hr>
+			</div>
+			<div class="col-md-4">
+				<hr>
+				<h2 class="text-center">Title 3</h2>
+				<div class="switch demo3">
+					<input id="cb3" type="checkbox">
+					<label><i></i></label>
+				</div>
+				<hr>
+			</div>
+			<div class="col-md-4">
+				<hr>
+				<h2 class="text-center">Title 4</h2>
+				<div class="switch demo1">
+					<input id="cb4" type="checkbox">
+					<label></label>
+				</div>
+				<hr>
+			</div>
+			<div class="col-md-4">
+				<hr>
+				<h2 class="text-center">Title 5</h2>
+				<div class="switch demo1">
+					<input id="cb5" type="checkbox">
+					<label></label>
+				</div>
+				<hr>
+			</div>
+			<div class="col-md-4">
+				<hr>
+				<h2 class="text-center">Title 6</h2>
+				<div class="switch demo1">
+					<input id="cb6" type="checkbox">
+					<label></label>
+				</div>
+				<hr>
+			</div>
+			<div class="col-md-12">
+				<div class="text-center">
+{#                    <form action="/add/" method="get">#}
+{#                      a: <input type="text" name="a"> <br>#}
+{#                          <input type="submit" value="submit">#}
+{#                              </form>#}
+                    <form id="add" action="/add/" method="post"> {% csrf_token %}
+                        <input id="cmd"  style="display:none" type="text" name="a">
+                        <input type="button" class="button button-action" onclick="sub()" value="SUBMIT">
+                    </form>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
 
 
 
 
+<div id="news">
+<div class="container">
+<div class="center">
+	<!-- start sw-rss-feed code -->
+	<script type="text/javascript">
+	<!--
+	rssfeed_url = new Array();
+	rssfeed_url[0]="http://news.baidu.com/n?cmd=1&class=civilnews&tn=rss";
+	rssfeed_frame_width="100%";
+	rssfeed_frame_height="450";
+	rssfeed_scroll="on";
+	rssfeed_scroll_step="6";
+	rssfeed_scroll_bar="off";
+	rssfeed_target="_blank";
+	rssfeed_font_size="12";
+	rssfeed_font_face="";
+	rssfeed_border="on";
+	rssfeed_css_url="http://feed.surfing-waves.com/css/style1.css";
+	rssfeed_title="on";
+	rssfeed_title_name="";
+	rssfeed_title_bgcolor="#3366ff";
+	rssfeed_title_color="#fff";
+	rssfeed_title_bgimage="http://";
+	rssfeed_footer="off";
+	rssfeed_footer_name="rss feed";
+	rssfeed_footer_bgcolor="#fff";
+	rssfeed_footer_color="#333";
+	rssfeed_footer_bgimage="http://";
+	rssfeed_item_title_length="50";
+	rssfeed_item_title_color="#666";
+	rssfeed_item_bgcolor="#fff";
+	rssfeed_item_bgimage="http://";
+	rssfeed_item_border_bottom="on";
+	rssfeed_item_source_icon="off";
+	rssfeed_item_date="off";
+	rssfeed_item_description="on";
+	rssfeed_item_description_length="120";
+	rssfeed_item_description_color="#666";
+	rssfeed_item_description_link_color="#333";
+	rssfeed_item_description_tag="off";
+	rssfeed_no_items="0";
+	rssfeed_cache = "469b642771e1fa56635603c522053e7c";
+	//-->
+	</script>
+	<script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script>
+	<!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. -->
+	<div style="text-align:right; width:1000px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#ccc;font-size:10px">widget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#ccc;font-size:10px">surfing-waves.com</a></div>
+	<!-- end sw-rss-feed code -->
+	<!-- <a href="/news/templates/home.html" >check logs</a> -->
+	<!-- <a href="/livevideo/templates/live.html" >live video</a> -->
+	</div>
+</div>
+</div>
 
-<!-- start sw-rss-feed code -->
-<script type="text/javascript">
-<!--
-rssfeed_url = new Array();
-rssfeed_url[0]="http://news.baidu.com/n?cmd=1&class=civilnews&tn=rss";
-rssfeed_frame_width="1000";
-rssfeed_frame_height="450";
-rssfeed_scroll="on";
-rssfeed_scroll_step="6";
-rssfeed_scroll_bar="off";
-rssfeed_target="_blank";
-rssfeed_font_size="12";
-rssfeed_font_face="";
-rssfeed_border="on";
-rssfeed_css_url="http://feed.surfing-waves.com/css/style1.css";
-rssfeed_title="on";
-rssfeed_title_name="";
-rssfeed_title_bgcolor="#3366ff";
-rssfeed_title_color="#fff";
-rssfeed_title_bgimage="http://";
-rssfeed_footer="off";
-rssfeed_footer_name="rss feed";
-rssfeed_footer_bgcolor="#fff";
-rssfeed_footer_color="#333";
-rssfeed_footer_bgimage="http://";
-rssfeed_item_title_length="50";
-rssfeed_item_title_color="#666";
-rssfeed_item_bgcolor="#fff";
-rssfeed_item_bgimage="http://";
-rssfeed_item_border_bottom="on";
-rssfeed_item_source_icon="off";
-rssfeed_item_date="off";
-rssfeed_item_description="on";
-rssfeed_item_description_length="120";
-rssfeed_item_description_color="#666";
-rssfeed_item_description_link_color="#333";
-rssfeed_item_description_tag="off";
-rssfeed_no_items="0";
-rssfeed_cache = "469b642771e1fa56635603c522053e7c";
-//-->
-</script>
-<script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script>
-<!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. -->
-<div style="text-align:right; width:1000px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#ccc;font-size:10px">widget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#ccc;font-size:10px">surfing-waves.com</a></div>
-<!-- end sw-rss-feed code -->
-<a href="/news/templates/home.html" >check logs</a>
-<a href="/livevideo/templates/live.html" >live video</a>
+<nav id="footer">
+	<div class="container">
+		<div class="fnav">
+			<p>Copyright &copy; 2017. <a href=mailto:18202121195@sina.cn>朱耀明</a> <a href=mailto:244804587@qq.com>庞博</a> <a href=mailto:wmbao24@gmail.com>包伟铭</a> <a href=mailto:1078569191@qq.com>姬厚祥</a> All rights reserved.</p>
+		</div>
+	</div>
+</nav>
+
+
+<script type="text/javascript" src="../../static/js/jquery.1.11.1.js"></script>
+<script type="text/javascript" src="../../static/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../static/js/SmoothScroll.js"></script>
+<script type="text/javascript" src="../../static/js/jquery.isotope.js"></script>
+<script type="text/javascript" src="../../static/js/jquery.video-ui.js"></script>
+<script src="../../static/js/owl.carousel.js"></script>
+<script type="text/javascript" src="../../static/js/main.js"></script>
+
+
 </body>
+
 </html>

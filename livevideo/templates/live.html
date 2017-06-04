@@ -1,15 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
+<meta charset="utf-8">
+<!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D01-Video Monitor</title>
+<meta name="description" content="D01-Control Panel">
+<meta name="keywords" content="">
+<meta name="author" content="Bao Weiming">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="../../static/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../../static/fonts/font-awesome/css/font-awesome.css">
+
+<!-- Slider
+================================================== -->
+<link href="../../static/css/owl.carousel.css" rel="stylesheet" media="screen">
+<link href="../../static/css/owl.theme.css" rel="stylesheet" media="screen">
+
+<!-- Stylesheet
+================================================== -->
+<link rel="stylesheet" type="text/css"  href="../../static/css/style.css">
+<link rel="stylesheet" type="text/css" href="../../static/css/responsive.css">
+
+
+<link rel="stylesheet" href="../../static/css/buttons.css">
+    
+<!-- Video
+================================================== -->
+<!--<link href="css/video-default.css" rel="stylesheet">-->
+
+<!-- Code
+================================================== -->
+<!-- <link href="../../static/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" /> -->
+<!-- <script type="text/javascript" src="../../static/google-code-prettify/prettify.js"></script> -->
+
 </head>
 <body>
-<video id="video" width="640" height="480" autoplay></video>
-<button id="snap">Snap Photo</button>
-<canvas id="canvas" width="640" height="480"></canvas>
+<nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="$">Group 01</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/control/" class="page-scroll">Control Panel</a></li>
+        <li><a href="/log/" class="page-scroll">Log</a></li>
+        <li><a href="/video/" class="page-scroll">Video Monitor</a></li>
+<!--        <li><a href="#tf-er" class="page-scroll">控制端实现</a></li>
+        <li><a href="#tf-works" class="page-scroll">成果与特色</a></li>
+        <li><a href="#tf-download" class="page-scroll">下载</a></li>
+        <li><a href="#tf-thoughts" class="page-scroll">组员体悟</a></li>
+        <li><a href="#tf-reference" class="page-scroll">参考文献</a></li> -->
+        <!-- <li><a href="#tf-thanks" class="page-scroll">致谢</a></li> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<p></p>
+
+<div id="tf-ee">
+    <div class="container"> <!-- Container -->
+        <div class="section-title-black center">
+            <h1 style="text-color=#000000;text-align: center;"><strong>Video Monitor</strong></h1>
+            <div class="line">
+                <hr>
+            </div>
+            <div class="clearfix"></div>
+            <!-- <p style="font-size: 150%;"><span class="fa fa-dot-circle-o"></span>　多个终端连接简易方便，可扩展至所有安装有终端的设备之上：控制端App与小车端App采用NFC配置IP互联，快捷方便；控制端App与小车运动端采用蓝牙互联，普遍适用。</p>
+            <p style="font-size: 150%;"><span class="fa fa-dot-circle-o"></span>　多模式操作，满足不同操作需求，包括语音，手势，按键及重力感应操作。</p>
+            <p style="font-size: 150%;"><span class="fa fa-dot-circle-o"></span>　简约风格设计。在提高美观度的同时简化操作，提高人机交互效率。</p>
+            <p style="font-size: 150%;"><span class="fa fa-dot-circle-o"></span>　各终端交互效率高。精简逻辑结构，使得小车运行，画面传输流畅，没有迟钝或是卡顿的现象。</p> -->
+        </div>
+        <div class="vid">
+        <video id="video" width="640" height="480" autoplay></video>
+        </div>
+        <div class="vid" style="margin: 20px auto">
+        <button id="snap" class="button button-action">Snap Photo</button>
+        </div>
+        <div class="vid">
+        <canvas id="canvas" width="640" height="480"></canvas >
+        <!-- <canvas id="canvas" width="640" height="0"></canvas > -->
+        </div>
+    </div>
+</div>
 
 
-<a href="/news/templates/home.html" >check logs</a>
-<a href="/control/templates/control.html" >control panel</a>
+<!-- <a href="/news/templates/home.html" >check logs</a> -->
+<!-- <a href="/control/templates/control.html" >control panel</a> -->
+<nav id="footer">
+    <div class="container">
+        <div class="fnav">
+            <p>Copyright &copy; 2017. <a href=mailto:18202121195@sina.cn>朱耀明</a> <a href=mailto:244804587@qq.com>庞博</a> <a href=mailto:wmbao24@gmail.com>包伟铭</a> <a href=mailto:1078569191@qq.com>姬厚祥</a> All rights reserved.</p>
+        </div>
+    </div>
+</nav>
+
+<script type="text/javascript" src="../../static/js/jquery.1.11.1.js"></script>
+<script type="text/javascript" src="../../static/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../static/js/SmoothScroll.js"></script>
+<script type="text/javascript" src="../../static/js/jquery.isotope.js"></script>
+<script type="text/javascript" src="../../static/js/jquery.video-ui.js"></script>
+<script src="../../static/js/owl.carousel.js"></script>
+<script type="text/javascript" src="../../static/js/main.js"></script>
+
 </body>
 </html>
 <script type="text/javascript">
@@ -44,7 +147,9 @@
         // 触发拍照动作
         document.getElementById("snap")
             .addEventListener("click", function() {
+                // document.getElementById("snap").style.height = "480";
                 context.drawImage(video, 0, 0, 640, 480);
             });
     }, false);
 </script>
+
